@@ -1,0 +1,35 @@
+<div class="user-head">
+  <img src="{{ user.avatar }}" />
+  <span>{{ user.firstName }} {{ user.lastName }}</span>
+  <span>({{ user.email }})</span>
+</div>
+
+<h2>Address</h2>
+
+<div>
+  <label for="street">
+    <span>Street: </span>
+    <input type="text" id="street" [(ngModel)]="user.address.street" />
+  </label>
+</div>
+
+<div>
+  <label for="city">
+    <span>City: </span>
+    <input type="text" id="city" [(ngModel)]="user.address.city" />
+  </label>
+</div>
+
+<div>
+  <label for="state">
+    <span>State: </span>
+    <input type="text" id="state" [(ngModel)]="user.address.state" />
+  </label>
+</div>
+
+<div>
+  <label for="zipCode">
+    <span>ZIP Code: </span>
+    <input type="text" id="zipCode" [(ngModel)]="user.address.zipCode" />
+  </label>
+</div>

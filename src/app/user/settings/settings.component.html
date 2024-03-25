@@ -1,0 +1,84 @@
+<div class="user-head">
+  <img src="{{ user.avatar }}" />
+  <span>{{ user.firstName }} {{ user.lastName }}</span>
+  <span>({{ user.email }})</span>
+</div>
+
+<h2>Settings</h2>
+
+<h3>Comunication</h3>
+
+<div>
+  <label for="receiveEmails">
+    <input
+      type="checkbox"
+      id="receiveEmails"
+      [(ngModel)]="user.preferences.comunication.receiveEmails"
+    />
+    <span>Receive e-mails</span>
+  </label>
+</div>
+<div>
+  <label for="receiveTextMessages">
+    <input
+      type="checkbox"
+      id="receiveTextMessages"
+      [(ngModel)]="user.preferences.comunication.receiveTextMessages"
+    />
+    <span>Receive text Messages</span>
+  </label>
+</div>
+<div>
+  <label for="receiveMails">
+    <input
+      type="checkbox"
+      id="receiveMails"
+      [(ngModel)]="user.preferences.comunication.receiveMails"
+    />
+    <span>Receive mails</span>
+  </label>
+</div>
+
+<h3>Site</h3>
+
+<div>
+  <label for="theme-light" style="margin-right: 10px">
+    <input
+      id="theme-light"
+      name="theme"
+      type="radio"
+      value="light"
+      [(ngModel)]="user.preferences.site.theme"
+    />
+    <span>Light</span>
+  </label>
+  <label for="theme-dark">
+    <input
+      id="theme-dark"
+      name="theme"
+      type="radio"
+      value="dark"
+      [(ngModel)]="user.preferences.site.theme"
+    />
+    <span>Dark</span>
+  </label>
+</div>
+
+<div>
+  <label for="language">
+    <span>Language: </span>
+    <select
+      id="langauge"
+      name="language"
+      [(ngModel)]="user.preferences.site.language"
+    >
+      <option value="">Select a Language</option>
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="it">Italian</option>
+      <option value="pt">Portuguese</option>
+    </select>
+  </label>
+</div>

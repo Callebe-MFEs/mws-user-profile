@@ -1,0 +1,28 @@
+<div class="user-head">
+  <img src="{{ user.avatar }}" />
+  <span>{{ user.firstName }} {{ user.lastName }}</span>
+  <span>({{ user.email }})</span>
+</div>
+
+<h2>Profile</h2>
+
+<div>
+  <label for="firstName">
+    <span>First name: </span>
+    <input type="text" id="firstName" [(ngModel)]="user.firstName" />
+  </label>
+</div>
+
+<div>
+  <label for="lastName">
+    <span>Last name: </span>
+    <input type="text" id="lastName" [(ngModel)]="user.lastName" />
+  </label>
+</div>
+
+<div>
+  <label for="email">
+    <span>Email: </span>
+    <input type="text" id="email" [(ngModel)]="user.email" />
+  </label>
+</div>

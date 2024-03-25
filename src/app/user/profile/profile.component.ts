@@ -35,6 +35,10 @@ export class ProfileComponent {
   };
 
   constructor(protected userService: UserService) {
-    this.userService.user().subscribe((u) => (this.user = u));
+    this.userService.getUser().subscribe((u) => (this.user = u));
+  }
+
+  save() {
+    this.userService.setUser(this.user);
   }
 }

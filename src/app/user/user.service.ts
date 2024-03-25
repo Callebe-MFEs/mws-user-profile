@@ -61,15 +61,25 @@ export class UserService {
 
   private userSubject = new ReplaySubject<User>(1);
 
+  private userService: any | undefined;
+
   constructor() {
     this.userSubject.next(this.$user);
 
     // only triggered if running as a MFE
     singleSpaPropsSubject.subscribe((props) => {
-      this.$user = (props as any).userService.getUser();
-      this.userSubject.next(this.$user);
+      this.userService = (props as any).userService;
+      this.userService?.getUser().subscribe((user: User) => {
+        this.$user = user;
+        this.userSubject.next(this.$user);
+      });
     });
   }
 
-  user = () => this.userSubject;
+  getUser = () => this.userSubject;
+
+  setUser(value: User): void {
+    this.$user = value;
+    this.userService?.setUser(value);
+  }
 }
